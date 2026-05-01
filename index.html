@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usando los simbolos</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="game" id="gameRoot">
+      <section class="screen screen-menu is-active" id="menuScreen" aria-label="Seleccion de familia">
+        <header class="menu-header">
+          <h1>Comparar numeros menores que 1000 utilizando los simbolos &lt;, &gt;, =.</h1>
+          <h2>Selecciona la familia</h2>
+        </header>
+
+        <div class="family-list" aria-label="Familias de numeros">
+          <button class="family-button" type="button" data-min="100" data-max="199">De 100 a 199</button>
+          <button class="family-button" type="button" data-min="200" data-max="299">De 200 a 299</button>
+          <button class="family-button" type="button" data-min="300" data-max="399">De 300 a 399</button>
+          <button class="family-button" type="button" data-min="400" data-max="499">De 400 a 499</button>
+          <button class="family-button" type="button" data-min="500" data-max="599">De 500 a 599</button>
+          <button class="family-button" type="button" data-min="100" data-max="599">De 100 a 599</button>
+          <button class="family-button" type="button" data-min="600" data-max="699">De 600 a 699</button>
+          <button class="family-button" type="button" data-min="700" data-max="799">De 700 a 799</button>
+          <button class="family-button" type="button" data-min="800" data-max="899">De 800 a 899</button>
+          <button class="family-button" type="button" data-min="900" data-max="999">De 900 a 999</button>
+          <button class="family-button" type="button" data-min="100" data-max="999">De 100 a 999</button>
+        </div>
+
+        <div class="menu-actions">
+          <button id="themeButtonMenu" class="utility-button" type="button" aria-pressed="false">Claro oscuro</button>
+          <button id="audioButtonMenu" class="utility-button" type="button" aria-pressed="true">Audio activo</button>
+        </div>
+      </section>
+
+      <section class="screen screen-play" id="playScreen" aria-label="Juego de comparacion">
+        <header class="play-header">
+          <h2>Compara los siguientes numeros con: &gt; (mayor que), = (igual que) o &lt; (menor que)</h2>
+          <div class="status-bar" aria-live="polite">
+            <span id="familyLabel">Familia: 100 a 999</span>
+            <span id="scoreLabel">Puntos: 0</span>
+          </div>
+        </header>
+
+        <section class="rounds" id="rounds" aria-label="Comparaciones"></section>
+
+        <div class="feedback" id="feedback" aria-live="polite">
+          <img id="feedbackIcon" alt="" />
+          <span id="feedbackText">Selecciona el simbolo correcto en cada fila.</span>
+        </div>
+
+        <nav class="game-actions" aria-label="Controles">
+          <button id="exitButton" class="game-button" type="button">Salir</button>
+          <button id="resetButton" class="game-button" type="button">Reiniciar</button>
+          <button id="menuButton" class="game-button" type="button">Menu</button>
+          <button id="themeButtonPlay" class="game-button utility-wide" type="button" aria-pressed="false">Claro oscuro</button>
+          <button id="audioButtonPlay" class="game-button utility-wide" type="button" aria-pressed="true">Audio activo</button>
+        </nav>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
