@@ -222,11 +222,15 @@ function toggleTheme() {
 
 function syncUtilityButtons() {
   els.audioButtons.forEach((button) => {
-    button.textContent = state.audio ? "Audio activo" : "Audio apagado";
+    const label = state.audio ? "Audio activo" : "Audio apagado";
+    button.innerHTML = `<span aria-hidden="true">${state.audio ? "&#9834;" : "&times;"}</span> ${label}`;
+    button.setAttribute("aria-label", label);
     button.setAttribute("aria-pressed", String(state.audio));
   });
   els.themeButtons.forEach((button) => {
-    button.textContent = state.dark ? "Claro" : "Claro oscuro";
+    const label = state.dark ? "Claro" : "Claro oscuro";
+    button.innerHTML = `<span aria-hidden="true">${state.dark ? "&#9728;" : "&#9680;"}</span> ${label}`;
+    button.setAttribute("aria-label", label);
     button.setAttribute("aria-pressed", String(state.dark));
   });
 }
